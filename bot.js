@@ -5,7 +5,6 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Desert Bot- Script By : i1Suhaib`);
@@ -16,7 +15,6 @@ client.on('ready', () => {
 client.user.setGame(`$help | Games WorlD`,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
-
 
 
 
@@ -203,8 +201,6 @@ client.on('message', message => {
      }
        });
 	   
-	   client.on('message', message => {
-              if(!message.channel.guild) return;
 
 	  client.on("message",  message => {
 
@@ -765,6 +761,25 @@ client.on('message',async message => {
     });
     }
   });
+
+
+client.on('message', message => {
+  if (true) {
+if (message.content === '$invite') {
+      message.author.send(' :gift_heart: رابط بوتك  |  تفضل ربط البوت https://discordapp.com/api/oauth2/authorize?client_id=504653862867697664&permissions=8&scope=bot    ').catch(e => console.log(e.stack));
+
+    }
+   } 
+  });
+
+
+client.on('message', message => {
+     if (message.content === "$invite") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
      
      
   message.channel.sendEmbed(embed);
@@ -1000,7 +1015,4 @@ client.channels.find('id', '525292815538978846').setName("Welcome To Games WorlD
   }, 3000);
 });
 
-
-
-// THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
