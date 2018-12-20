@@ -1034,7 +1034,7 @@ client.on("message", message => {
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`Welcome To Games WorlD 
+  return channel.send(`Welcome To Games WorlD..♥ 
   لاتنسا تفعل نفسك
 ${member}`) 
 }).catch(console.error)
