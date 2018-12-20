@@ -1086,8 +1086,6 @@ client.on("guildMemberAdd", member => {
 })
 
 
-// THIS  MUST  BE  THIS  WAY
-client.login("NTI0MzIzMTQxNTEwNzU4NDAw.Dv0dJQ.73kiJ2bDOrhdHKJCtezPupMHxUg");
 
 
 
