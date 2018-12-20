@@ -1030,29 +1030,6 @@ client.on("message", message => {
 };     
 });
 
-client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'ღ⇝text');
-    let memberavatar = member.user.avatarURL
-      if (!channel) return; 
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField(':running_shirt_with_sash: | name :  ',`${member}`)
-        .addField(':loudspeaker: | ظ†ظˆط±طھ ط§ظ„ط³ظٹط±ظپط± ظٹ ظ‚ظ„ط¨ظٹ' , `Welcome to the server, ${member}`)
-        .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
-                .addField('â‍،| ط§ظ†طھ ط§ظ„ط¹ط¶ظˆ ط±ظ‚ظ…',`${member.guild.memberCount}`)
-               
-                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
-                      
-                                     .addField(' ط§ظ„ظ€ط³ظٹط±ظپط±', `${member.guild.name}`,true)
-                                       
-     .setFooter("**Last Code**")
-        .setTimestamp()
-    
-      channel.sendEmbed(embed);
-    });
-		
-
 const invites = {};
 
 const wait = require('util').promisify(setTimeout);
