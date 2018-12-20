@@ -206,20 +206,6 @@ client.on('message', message => {
 	   client.on('message', message => {
               if(!message.channel.guild) return;
 
-client.on("message", message => {
-
-            if (message.content.startsWith(prefix + "bc")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' '); 
-  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
- m.send(`${argresult}\n ${m}`);
-})
- message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` **: عدد الاعضاء المستلمين**`); 
- message.delete(); 
-};     
-});
-
 	  client.on("message",  message => {
 
          let args = message.content.split(' ').slice(1);
@@ -1013,15 +999,6 @@ client.channels.find('id', '525292815538978846').setName("Welcome To Games Worl"
 client.channels.find('id', '525292815538978846').setName("Welcome To Games WorlD");
   }, 3000);
 });
-
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`Welcome To Games WorlD♥
-لاتنسا تفعل نفسك
- ${member}  
- `) 
-}).catch(console.error)
-})
 
 
 
