@@ -1029,4 +1029,59 @@ client.on("message", message => {
 };     
 });
 
+client.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'ღ⇝text');
+    let memberavatar = member.user.avatarURL
+      if (!channel) return; 
+    let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField(':running_shirt_with_sash: | name :  ',`${member}`)
+        .addField(':loudspeaker: | ظ†ظˆط±طھ ط§ظ„ط³ظٹط±ظپط± ظٹ ظ‚ظ„ط¨ظٹ' , `Welcome to the server, ${member}`)
+        .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
+                .addField('â‍،| ط§ظ†طھ ط§ظ„ط¹ط¶ظˆ ط±ظ‚ظ…',`${member.guild.memberCount}`)
+               
+                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
+                      
+                                     .addField(' ط§ظ„ظ€ط³ظٹط±ظپط±', `${member.guild.name}`,true)
+                                       
+     .setFooter("**Last Code**")
+        .setTimestamp()
+    
+      channel.sendEmbed(embed);
+    });
+		
+
+const invites = {};
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+  wait(1000);
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const logChannel = member.guild.channels.find(channel => channel.name === "ღ⇝welcome");
+    logChannel.send(`${member} Invited by: <@${inviter.id}>`);
+  });
+});
+
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`Welcome To Games WorlD 
+  لاتنسا تفعل نفسك`) 
+}).catch(console.error)
+})
+
 client.login(process.env.BOT_TOKEN);
