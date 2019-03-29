@@ -991,31 +991,6 @@ client.on('ready', () => {
   });
 });
 
-client.on("ready", async  => {
-setInterval(function(){
-client.channels.find('id', '525292815538978846').setName("W");
-client.channels.find('id', '525292815538978846').setName("We");
-client.channels.find('id', '525292815538978846').setName("Wel");
-client.channels.find('id', '525292815538978846').setName("Welc");
-client.channels.find('id', '525292815538978846').setName("Welco");
-client.channels.find('id', '525292815538978846').setName("Welcom");
-client.channels.find('id', '525292815538978846').setName("Welcome");
-client.channels.find('id', '525292815538978846').setName("Welcome T");
-client.channels.find('id', '525292815538978846').setName("Welcome To");
-client.channels.find('id', '525292815538978846').setName("Welcome To G");
-client.channels.find('id', '525292815538978846').setName("Welcome To Ga");
-client.channels.find('id', '525292815538978846').setName("Welcome To Gam");
-client.channels.find('id', '525292815538978846').setName("Welcome To Game");
-client.channels.find('id', '525292815538978846').setName("Welcome To Games");
-client.channels.find('id', '525292815538978846').setName("Welcome To Games W"); 
-client.channels.find('id', '525292815538978846').setName("Welcome To Games WO");
-client.channels.find('id', '525292815538978846').setName("Welcome To Games Wor");
-client.channels.find('id', '525292815538978846').setName("Welcome To Games Worl");
-client.channels.find('id', '525292815538978846').setName("Welcome To Games WorlD");
-  }, 3000);
-});
-
-
 client.on("message", message => {
 
             if (message.content.startsWith(prefix + "bc")) {
